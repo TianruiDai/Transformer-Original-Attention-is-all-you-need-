@@ -1,4 +1,3 @@
-from math import sin
 import torch
 from torch.functional import _return_inverse
 import torch.nn as nn
