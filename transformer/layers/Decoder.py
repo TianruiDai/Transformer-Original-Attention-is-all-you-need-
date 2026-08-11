@@ -1,4 +1,4 @@
-from ult import *
+from ults import *
 import torch
 import torch.nn as nn
 
@@ -22,7 +22,7 @@ class DecoderLayer(nn.Module):
 
     def forward(self,enc_output,dec_input,dec_enc_mask,dec_self_mask = None):
         dec_output,dec_self_attn = self.attention(dec_input,dec_input,dec_input,dec_self_mask)
-        dec_output,dec_enc_attn = self.cross_attention(dec_input,enc_output,enc_output,dec_enc_mask )
+        dec_output,dec_enc_attn = self.cross_attention(dec_output,enc_output,enc_output,dec_enc_mask )
         dec_output = self.twolayer(dec_output)
 
-        return dec_output, dec_enc_attn, dec_self_attn
+        return dec_output, dec_self_attn, dec_enc_attn

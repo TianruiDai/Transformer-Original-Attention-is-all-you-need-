@@ -1,8 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-from LLM.ult.ult import RMS_Layernorm
+from .ult import RMS_Layernorm
 
 class Two_Layers(nn.Module):
 
